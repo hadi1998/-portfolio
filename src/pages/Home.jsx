@@ -81,6 +81,13 @@ const Home = ({ helmetTitle }) => {
             width: 50,
             borderRadius: "50%",
             ml: 2,
+            display: {
+              xl: "block",
+              lg: "block",
+              md: "block",
+              sm: "none",
+              xs: "none",
+            },
           }}
         >
           <Avatar
@@ -103,6 +110,13 @@ const Home = ({ helmetTitle }) => {
             width: 50,
             borderRadius: "50%",
             mr: 2,
+            display: {
+              xl: "block",
+              lg: "block",
+              md: "block",
+              sm: "none",
+              xs: "none",
+            },
           }}
         >
           <Avatar
@@ -132,7 +146,7 @@ const Home = ({ helmetTitle }) => {
             {strings[index % strings.length]}
           </Typography>
         </TextTransition>
-        <Typography variant="h4" color="whitesmoke" sx={{ mr: 1 }}>
+        <Typography variant="h4" color="whitesmoke" >
           من یک
         </Typography>
       </Box>
