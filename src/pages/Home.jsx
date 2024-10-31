@@ -147,7 +147,7 @@ const Home = ({ helmetTitle }) => {
           </Typography>
         </TextTransition>
         <Typography variant="h4" color="whitesmoke" mr={0.5}>
-          من یک
+          من
         </Typography>
       </Box>
       <Avatar
