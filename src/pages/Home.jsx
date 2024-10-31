@@ -33,7 +33,7 @@ const Home = ({ helmetTitle }) => {
     });*/
 
     const stringsTransition = setInterval(() => {
-      //etIndex((index) => index + 1);
+      setIndex((index) => index + 1);
       setIconIndex((index) => index + 1);
     }, 3000);
 
@@ -146,7 +146,7 @@ const Home = ({ helmetTitle }) => {
             {strings[index % strings.length]}
           </Typography>
         </TextTransition>
-        <Typography variant="h4" color="whitesmoke" >
+        <Typography variant="h4" color="whitesmoke" mr={0.5}>
           من یک
         </Typography>
       </Box>

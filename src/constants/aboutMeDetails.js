@@ -110,7 +110,7 @@ export const devSocialMediaInfo = [
   {
     title: "گیت هاب",
     aria_label: "Github",
-    url: "",
+    url: "https://github.com/hadi1998",
     icon: <GitHub sx={{ color: "gray" }} />,
   },
   {

@@ -42,20 +42,26 @@ export const devSkills = {
     icon: ReactIcon,
     color: "info",
   },
-  nodeSkill: {
+  nextSkill: {
     id: 4,
+    name: "Next",
+    icon: ReactIcon,
+    color: "info",
+  },
+  nodeSkill: {
+    id: 5,
     name: "NodeJS",
     icon: NodeIcon,
     color: "success",
   },
   gitSkill: {
-    id: 5,
+    id: 6,
     name: "Git",
     icon: GitIcon,
     color: "secondary",
   },
   kotlinSkill: {
-    id: 6,
+    id: 7,
     name: "Kotlin",
     icon: KotlinIcon,
     color: "warning",

@@ -8,6 +8,7 @@ const AccordionProgContent = () => {
   const [css, setCss] = useState(0);
   const [nodeJs, setNodeJs] = useState(0);
   const [reactJs, setReactJs] = useState(0);
+  const [nextJs, setNextJs] = useState(0);
   const [git, setGit] = useState(0);
   const [kotlin, setKotlin] = useState(0);
 
@@ -25,12 +26,17 @@ const AccordionProgContent = () => {
 
       setCss((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 40);
+        return Math.min(oldProgress + diff, 50);
       });
 
       setReactJs((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 60);
+        return Math.min(oldProgress + diff, 70);
+      });
+
+      setNextJs((oldProgress) => {
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 70);
       });
 
       setNodeJs((oldProgress) => {
@@ -40,7 +46,7 @@ const AccordionProgContent = () => {
 
       setGit((oldProgress) => {
         const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 20);
+        return Math.min(oldProgress + diff, 40);
       });
       setKotlin((oldProgress) => {
         const diff = Math.random() * 10;
@@ -53,7 +59,7 @@ const AccordionProgContent = () => {
     };
   }, []);
 
-  const { htmlSkill, cssSkill, jsSkill, reactSkill, nodeSkill, gitSkill, kotlinSkill } =
+  const { htmlSkill, cssSkill, jsSkill, reactSkill,nextSkill, nodeSkill, gitSkill, kotlinSkill } =
     devSkills;
 
   return (
@@ -81,6 +87,12 @@ const AccordionProgContent = () => {
         icon={reactSkill.icon}
         color={reactSkill.color}
         value={reactJs}
+      />
+      <Skill
+        name={nextSkill.name}
+        icon={nextSkill.icon}
+        color={nextSkill.color}
+        value={nextJs}
       />
       <Skill
         name={nodeSkill.name}
