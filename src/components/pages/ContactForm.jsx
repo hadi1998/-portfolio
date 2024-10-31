@@ -27,38 +27,47 @@ import {
   commentValidationSchema,
   contactValidationSchema,
 } from "./contactValidationSchema";
-import { useContext} from "react";
+import { useContext } from "react";
 import MainContext from "../../context";
 import { MaterialUISwitch } from "../common/MaterialUISwitch";
 
 const ContactForm = ({ section }) => {
   const theme = useTheme();
+  
 
   const { createComment, createContact } = useContext(MainContext);
-
 
   const contactInputNames = {
     fullname: "",
     email: "",
     message: "",
     subject: "",
-    recaptcha: "",
+    //recaptcha: "",
   };
+
+  const formatedTimestamp = ()=> {
+    const d = new Date()
+    const date = d.toISOString().split('T')[0];
+    const time = d.toTimeString().split(' ')[0];
+    return `${date} ${time}`
+  }
 
   const commentInputNames = {
     fullname: "",
     email: "",
     message: "",
     jobTitle: "",
-    recaptcha: "",
+    //recaptcha: "",
     gender: true,
+    date: formatedTimestamp()
   };
+ 
 
   const formik = useFormik({
     initialValues:
       section === "Comments" ? commentInputNames : contactInputNames,
     onSubmit: (values, { resetForm }) => {
-      console.log("values");
+     
       section === "Comments" ? createComment(values) : createContact(values);
       resetForm();
     },
@@ -250,19 +259,19 @@ const ContactForm = ({ section }) => {
         </Box>
       </CardContent>
       <CardActions sx={{ alignItems: "end", flexDirection: "column" }}>
-        <ReCAPTCHA
+        {/*<ReCAPTCHA
           sitekey="6LeyJJopAAAAAJeNGkwfCZ4NzuDfsWhUy2J2dXIc"
           theme={theme.palette.mode}
           hl="fa"
           onChange={(value) => {
             formik.setFieldValue("recaptcha", value);
           }}
-        />
-        {formik.errors.recaptcha && formik.touched.recaptcha && (
+        />*/}
+        {/*formik.errors.recaptcha && formik.touched.recaptcha && (
           <Typography variant="caption" color="error">
             {formik.errors.recaptcha}
           </Typography>
-        )}
+        )*/}
         <Button
           type="submit"
           sx={{

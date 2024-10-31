@@ -11,8 +11,12 @@ import { Home, About, Resume, Contact, Comments } from "../pages";
 import { useTheme } from "@mui/material/styles";
 import { Page, WorkSamples } from "../components/pages";
 import ThemeActionButton from "../components/sidebar/ThemeActionButton";
-import { createComments, createContact, getAllComments } from "../services/service";
-import {  ToastContainer, toast } from "react-toastify";
+import {
+  createComments,
+  createContact,
+  getAllComments,
+} from "../services/service";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function AppContainer() {
@@ -32,8 +36,8 @@ function AppContainer() {
 
     const fetchData = async () => {
       try {
-        const { data: commentData } = await getAllComments();
-        setComments(commentData.data);
+        const { data } = await getAllComments();
+        setComments(data);
       } catch (err) {
         console.log(err.message);
       }
@@ -59,9 +63,10 @@ function AppContainer() {
     try {
       const { status, data } = await createComments(values);
       if (status === 201) {
-        const allComments = [...data.commentData];
+        const allComments = [...comments, data];
+        
         toast.success("نظرت ثبت شد 🚀 ممنون که وقت گذاشتی ❣️", {
-          icon: "🚀"
+          icon: "🚀",
         });
         setComments(allComments);
       }
@@ -75,7 +80,7 @@ function AppContainer() {
       const { status } = await createContact(values);
       if (status === 201) {
         toast.success("پیامت برام ارسال شد، ممنون که وقت گذاشتی ❣️", {
-          icon: "🚀"
+          icon: "🚀",
         });
       }
     } catch (err) {
@@ -95,7 +100,7 @@ function AppContainer() {
         comment,
         setComments,
         comments,
-        createContact: createContactForm
+        createContact: createContactForm,
       }}
     >
       <MainLayout mode={mode}>

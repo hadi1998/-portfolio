@@ -21,6 +21,7 @@ const Comments = ({ helmetTitle }) => {
   const [, setLoading] = useState(false);
 
   const { comments } = useContext(MainContext);
+
   useEffect(() => {
     setLoading(true);
 

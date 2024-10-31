@@ -32,12 +32,12 @@ export const contactValidationSchema = Yup.object().shape({
   message: Yup.string().required(
     <ValidationTextError message={"یه کم توضیح بده!"} icon={MessageIcon} />
   ),
-  recaptcha: Yup.string().required(
+  /*recaptcha: Yup.string().required(
     <ValidationTextError
       message={"!گلم، کپتچا رو فراموش کردی"}
       icon={CaptchaIcon}
     />
-  ),
+  ),*/
 });
 
 export const commentValidationSchema = Yup.object().shape({
@@ -66,11 +66,11 @@ export const commentValidationSchema = Yup.object().shape({
       icon={JobIcon}
     />
   ),
-  recaptcha: Yup.string().required(
+  /*recaptcha: Yup.string().required(
     <ValidationTextError
       message={"!گلم، کپتچا رو فراموش کردی"}
       icon={CaptchaIcon}
     />
-  ),
+  ),*/
   gender: Yup.boolean()
 });

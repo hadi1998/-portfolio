@@ -6,6 +6,7 @@ import { grey } from "@mui/material/colors";
 const CommentsShowBox = ({ comment }) => {
   const theme = useTheme();
 
+
   const changeTimeStamp = (date) => {
     var timeStamp = new Date(date);
     return timeStamp.toLocaleString("fa-IR", {
@@ -59,7 +60,7 @@ const CommentsShowBox = ({ comment }) => {
                 ml: 2,
                 color: "darkslateblue",
               }}
-              label={<Typography>{comment.username}</Typography>}
+              label={<Typography>{comment.fullname}</Typography>}
             ></Chip>
           </Grid>
           <Grid xs={7} sm={6} md={4} sx={{ mr: 1 }}>
@@ -85,7 +86,7 @@ const CommentsShowBox = ({ comment }) => {
                     theme.palette.mode === "dark" ? "white" : "darkslateblue",
                 }}
               >
-                {comment.job_title}{" "}
+                {comment.jobTitle}{" "}
               </Typography>
             </Box>
           </Grid>
