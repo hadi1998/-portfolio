@@ -4,14 +4,14 @@ const SERVER_URL = "http://localhost:9000"
 
 
 export const createComments = (comment) => {
-  return http.post(`${SERVER_URL}/comments/`, comment);
+  return http.post(`${config.hadiapi}/comments/`, comment);
 }
 
 export const getAllComments = () => {
-  const url = `${SERVER_URL}/comments`;
+  const url = `${config.hadiapi}/comments`;
   return http.get(url);
 }
 
 export const createContact = (contact) => {
-  return http.post(`${SERVER_URL}/contact/`, contact);
+  return http.post(`${config.hadiapi}/contact/`, contact);
 }
