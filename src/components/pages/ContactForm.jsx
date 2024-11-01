@@ -19,7 +19,7 @@ import {
   Face6Rounded,
   SubjectRounded,
 } from "@mui/icons-material";
-import { boolean } from "yup";
+import { boolean, date } from "yup";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useTheme } from "@emotion/react";
 import { useFormik } from "formik";
@@ -45,12 +45,12 @@ const ContactForm = ({ section }) => {
     //recaptcha: "",
   };
 
-  /*const formatedTimestamp = ()=> {
+  const formatedTimestamp = ()=> {
     const d = new Date()
     const date = d.toISOString().split('T')[0];
     const time = d.toTimeString().split(' ')[0];
     return `${date} ${time}`
-  }*/
+  }
 
   const commentInputNames = {
     fullname: "",
@@ -59,6 +59,7 @@ const ContactForm = ({ section }) => {
     jobTitle: "",
     //recaptcha: "",
     gender: true,
+    date: formatedTimestamp()
   };
  
 
