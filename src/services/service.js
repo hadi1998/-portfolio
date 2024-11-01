@@ -1,6 +1,6 @@
 import http from "./httpService"
 import config from "./config.json"
-const SERVER_URL = "http://localhost:9000"
+const SERVER_URL = "https://localhost:9000"
 
 
 export const createComments = (comment) => {
