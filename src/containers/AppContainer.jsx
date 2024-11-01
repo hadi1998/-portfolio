@@ -36,8 +36,8 @@ function AppContainer() {
 
     const fetchData = async () => {
       try {
-        const { data } = await getAllComments();
-        setComments(data);
+        const { data: commentData } = await getAllComments();
+        setComments(commentData.data);
       } catch (err) {
         console.log(err.message);
       }
@@ -63,8 +63,8 @@ function AppContainer() {
     try {
       const { status, data } = await createComments(values);
       if (status === 201) {
-        const allComments = [...comments, data];
-        
+        const allComments = [...data.commentData];
+
         toast.success("نظرت ثبت شد 🚀 ممنون که وقت گذاشتی ❣️", {
           icon: "🚀",
         });

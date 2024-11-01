@@ -60,7 +60,7 @@ const CommentsShowBox = ({ comment }) => {
                 ml: 2,
                 color: "darkslateblue",
               }}
-              label={<Typography>{comment.fullname}</Typography>}
+              label={<Typography>{comment.username}</Typography>}
             ></Chip>
           </Grid>
           <Grid xs={7} sm={6} md={4} sx={{ mr: 1 }}>
@@ -86,7 +86,7 @@ const CommentsShowBox = ({ comment }) => {
                     theme.palette.mode === "dark" ? "white" : "darkslateblue",
                 }}
               >
-                {comment.jobTitle}{" "}
+                {comment.job_title}{" "}
               </Typography>
             </Box>
           </Grid>
