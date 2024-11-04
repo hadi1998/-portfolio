@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PagesContainer from "./PagesCotainer";
 import { Sidebar } from "../components/sidebar";
 import MainLayout from "../layouts/MainLayout";
-import {  useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import SidebarContainer from "./SidebarContainer";
 import MainContext from "../context";
 import { DrawerActionButton } from "../drawer";
@@ -63,7 +63,7 @@ function AppContainer() {
     try {
       const { status, data } = await createComments(values);
       if (status === 201) {
-        const allComments = [...comments,data];
+        const allComments = [...comments, data];
 
         toast.success("نظرت ثبت شد 🚀 ممنون که وقت گذاشتی ❣️", {
           icon: "🚀",
@@ -87,23 +87,7 @@ function AppContainer() {
       console.log(err.message);
     }
   };
-  const styles = {
-    slide: {
-      padding: 15,
-      minHeight: 100,
-      color: '#fff',
-    },
-    slide1: {
-      background: '#FEA900',
-    },
-    slide2: {
-      background: '#B3DC4A',
-    },
-    slide3: {
-      background: '#6AC0FF',
-    },
-  };
-
+ 
   return (
     <MainContext.Provider
       value={{
@@ -134,23 +118,23 @@ function AppContainer() {
         <DrawerActionButton />
         <PagesContainer>
           <ThemeActionButton />
-          <SwipeableViewer index={pageNumber} onChangeIndex={handlePageNumber}>
-            <Page pageNumber={pageNumber} index={0} style={Object.assign({}, styles.slide, styles.slide1)}>
+          <SwipeableViewer onSwitching={disabled=true} index={pageNumber} onChangeIndex={handlePageNumber}>
+            <Page pageNumber={pageNumber} index={0}>
               <Home helmetTitle={"وب سایت شخصی هادی خالقی"} />
             </Page>
-            <Page pageNumber={pageNumber} index={1} style={Object.assign({}, styles.slide, styles.slide2)}>
+            <Page pageNumber={pageNumber} index={1}>
               <About helmetTitle="وب سایت شخصی | درباره من" />
             </Page>
-            <Page pageNumber={pageNumber} index={2} style={Object.assign({}, styles.slide, styles.slide3)}>
+            <Page pageNumber={pageNumber} index={2}>
               <Resume helmetTitle="وب سایت شخصی | رزومه من" />
             </Page>
-            <Page pageNumber={pageNumber} index={3} style={Object.assign({}, styles.slide, styles.slide1)}>
+            <Page pageNumber={pageNumber} index={3}>
               <WorkSamples helmetTitle="وب سایت شخصی | نمونه کارها" />
             </Page>
-            <Page pageNumber={pageNumber} index={4} style={Object.assign({}, styles.slide, styles.slide2)}>
+            <Page pageNumber={pageNumber} index={4}>
               <Comments helmetTitle="وب سایت شخصی | نظرات" />
             </Page>
-            <Page pageNumber={pageNumber} index={5}  style={Object.assign({}, styles.slide, styles.slide3)}>
+            <Page pageNumber={pageNumber} index={5}>
               <Contact helmetTitlte="وب سایت شخصی | ارتباط با من" />
             </Page>
           </SwipeableViewer>
