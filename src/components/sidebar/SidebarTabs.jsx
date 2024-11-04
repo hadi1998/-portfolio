@@ -17,10 +17,8 @@ const SidebarTabs = () => {
     <Tabs
       orientation="vertical"
       variant="standard"
-      /*scrollButtons="auto"
-      allowScrollButtonsMobile*/
-      
-      onDrag={console.log("dragged")}
+      scrollButtons="auto"
+      allowScrollButtonsMobile
       indicatorColor={theme.palette.mode === "dark" ? "secondary" : "primary"}
       textColor={theme.palette.mode === "dark" ? "secondary" : "primary"}
       value={pageNumber}
@@ -31,6 +29,7 @@ const SidebarTabs = () => {
           key={index}
           label={tab.label}
           icon={tab.icon}
+          draggable={false}
           iconPosition="start"
           onClick={() => setDrawerOpen(false)}
           sx={{
