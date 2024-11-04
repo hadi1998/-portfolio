@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import PagesContainer from "./PagesCotainer";
 import { Sidebar } from "../components/sidebar";
 import MainLayout from "../layouts/MainLayout";
-import { Icon, Typography, useMediaQuery } from "@mui/material";
+import {  useMediaQuery } from "@mui/material";
 import SidebarContainer from "./SidebarContainer";
 import MainContext from "../context";
 import { DrawerActionButton } from "../drawer";
@@ -17,8 +17,7 @@ import {
 } from "../services/service";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import SwipeableViews from "react-swipeable-views-react-18-fix"
-import { useSwipeable } from "react-swipeable";
+import SwipeableViewer from "react-swipeable-views-react-18-fix";
 
 function AppContainer() {
   const [pageNumber, setPageNumber] = useState(0);
@@ -89,20 +88,6 @@ function AppContainer() {
     }
   };
 
-  const handlers = useSwipeable({ onSwiped: () =>  handlePageNumber })
-
-  // setup ref for your usage
-  const myRef = useRef();
-
-  const refPassthrough = (el) => {
-    // call useSwipeable ref prop with el
-    handlers.ref(el);
-
-    // set myRef el so you can access it yourself
-    myRef.current = el;
-  }
-
-
   return (
     <MainContext.Provider
       value={{
@@ -133,7 +118,7 @@ function AppContainer() {
         <DrawerActionButton />
         <PagesContainer>
           <ThemeActionButton />
-          <SwipeableViews index = {pageNumber} ref={refPassthrough}>
+          <SwipeableViewer index={pageNumber} onChangeIndex={handlePageNumber}>
             <Page pageNumber={pageNumber} index={0}>
               <Home helmetTitle={"وب سایت شخصی هادی خالقی"} />
             </Page>
@@ -152,7 +137,7 @@ function AppContainer() {
             <Page pageNumber={pageNumber} index={5}>
               <Contact helmetTitlte="وب سایت شخصی | ارتباط با من" />
             </Page>
-          </SwipeableViews>
+          </SwipeableViewer>
         </PagesContainer>
       </MainLayout>
     </MainContext.Provider>
