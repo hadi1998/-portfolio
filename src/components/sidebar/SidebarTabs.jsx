@@ -16,10 +16,11 @@ const SidebarTabs = () => {
   return (
     <Tabs
       orientation="vertical"
-      draggable={false}
-      variant="scrollable"
-      scrollButtons="auto"
-      allowScrollButtonsMobile
+      variant="standard"
+      /*scrollButtons="auto"
+      allowScrollButtonsMobile*/
+      
+      onDrag={console.log("dragged")}
       indicatorColor={theme.palette.mode === "dark" ? "secondary" : "primary"}
       textColor={theme.palette.mode === "dark" ? "secondary" : "primary"}
       value={pageNumber}
