@@ -51,7 +51,17 @@ const Home = ({ helmetTitle }) => {
   }, []);
   return (
     <Box
-      
+      sx={{
+        backgroundImage: `url(${bg02})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Helmet>
         <title>{helmetTitle}</title>

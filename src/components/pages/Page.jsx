@@ -6,6 +6,7 @@ const Page = (props) => {
     <div
       role="tabpanel"
       hidden={pageNumber !== index}
+      draggable={false}
       id={`tabpanel-${index}`}
       aria-label={`sidebar-tab-${index}`}
       {...others}
