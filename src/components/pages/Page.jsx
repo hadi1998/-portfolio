@@ -10,7 +10,7 @@ const Page = (props) => {
       aria-label={`sidebar-tab-${index}`}
       {...others}
     >
-      {pageNumber === index && <Box sx={{ height: "100vh",width: "50%", overflow:"hidden" }}>{children}</Box>}
+      {pageNumber === index && <Box sx={{ height: "100vh",width: "100%", overflow:"hidden" }}>{children}</Box>}
     </div>
   );
 };
