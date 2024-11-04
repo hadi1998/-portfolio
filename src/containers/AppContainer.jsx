@@ -118,7 +118,7 @@ function AppContainer() {
         <DrawerActionButton />
         <PagesContainer>
           <ThemeActionButton />
-          <SwipeableViewer disableDragging index={pageNumber} onChangeIndex={handlePageNumber}>
+          <SwipeableViewer disableSwipe disableTransition  index={pageNumber} onChangeIndex={handlePageNumber}>
             <Page pageNumber={pageNumber} index={0}>
               <Home helmetTitle={"وب سایت شخصی هادی خالقی"} />
             </Page>

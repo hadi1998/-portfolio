@@ -9,6 +9,8 @@ const Page = (props) => {
       id={`tabpanel-${index}`}
       aria-label={`sidebar-tab-${index}`}
       {...others}
+      disableSwipe 
+      disableTransition
     >
       {pageNumber === index && <Box sx={{ height: "100vh",width: "100%", overflow:"hidden" }}>{children}</Box>}
     </div>
