@@ -6,7 +6,6 @@ import { Icon, Typography, useMediaQuery } from "@mui/material";
 import SidebarContainer from "./SidebarContainer";
 import MainContext from "../context";
 import { DrawerActionButton } from "../drawer";
-import SwipeableViews from "react-swipeable-views";
 import { Home, About, Resume, Contact, Comments } from "../pages";
 import { useTheme } from "@mui/material/styles";
 import { Page, WorkSamples } from "../components/pages";
@@ -18,6 +17,7 @@ import {
 } from "../services/service";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SwipeableViews from "react-swipeable-views-react-18-fix"
 
 function AppContainer() {
   const [pageNumber, setPageNumber] = useState(0);
