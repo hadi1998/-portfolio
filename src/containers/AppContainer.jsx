@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PagesContainer from "./PagesCotainer";
 import { Sidebar } from "../components/sidebar";
 import MainLayout from "../layouts/MainLayout";
@@ -18,6 +18,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SwipeableViews from "react-swipeable-views-react-18-fix"
+import { useSwipeable } from "react-swipeable";
 
 function AppContainer() {
   const [pageNumber, setPageNumber] = useState(0);
@@ -88,6 +89,20 @@ function AppContainer() {
     }
   };
 
+  const handlers = useSwipeable({ onSwiped: () =>  handlePageNumber })
+
+  // setup ref for your usage
+  const myRef = useRef();
+
+  const refPassthrough = (el) => {
+    // call useSwipeable ref prop with el
+    handlers.ref(el);
+
+    // set myRef el so you can access it yourself
+    myRef.current = el;
+  }
+
+
   return (
     <MainContext.Provider
       value={{
@@ -118,7 +133,7 @@ function AppContainer() {
         <DrawerActionButton />
         <PagesContainer>
           <ThemeActionButton />
-          <SwipeableViews index={pageNumber} onChangeIndex={handlePageNumber} >
+          <SwipeableViews index = {pageNumber} ref={refPassthrough}>
             <Page pageNumber={pageNumber} index={0}>
               <Home helmetTitle={"وب سایت شخصی هادی خالقی"} />
             </Page>
