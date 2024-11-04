@@ -16,6 +16,7 @@ const SidebarTabs = () => {
   return (
     <Tabs
       orientation="vertical"
+      draggable={false}
       variant="scrollable"
       scrollButtons="auto"
       allowScrollButtonsMobile
