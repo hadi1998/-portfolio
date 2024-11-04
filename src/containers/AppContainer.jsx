@@ -87,6 +87,22 @@ function AppContainer() {
       console.log(err.message);
     }
   };
+  const styles = {
+    slide: {
+      padding: 15,
+      minHeight: 100,
+      color: '#fff',
+    },
+    slide1: {
+      background: '#FEA900',
+    },
+    slide2: {
+      background: '#B3DC4A',
+    },
+    slide3: {
+      background: '#6AC0FF',
+    },
+  };
 
   return (
     <MainContext.Provider
@@ -119,22 +135,22 @@ function AppContainer() {
         <PagesContainer>
           <ThemeActionButton />
           <SwipeableViewer index={pageNumber} onChangeIndex={handlePageNumber}>
-            <Page pageNumber={pageNumber} index={0}>
+            <Page pageNumber={pageNumber} index={0} style={Object.assign({}, styles.slide, styles.slide1)}>
               <Home helmetTitle={"وب سایت شخصی هادی خالقی"} />
             </Page>
-            <Page pageNumber={pageNumber} index={1}>
+            <Page pageNumber={pageNumber} index={1} style={Object.assign({}, styles.slide, styles.slide2)}>
               <About helmetTitle="وب سایت شخصی | درباره من" />
             </Page>
-            <Page pageNumber={pageNumber} index={2}>
+            <Page pageNumber={pageNumber} index={2} style={Object.assign({}, styles.slide, styles.slide3)}>
               <Resume helmetTitle="وب سایت شخصی | رزومه من" />
             </Page>
-            <Page pageNumber={pageNumber} index={3}>
+            <Page pageNumber={pageNumber} index={3} style={Object.assign({}, styles.slide, styles.slide1)}>
               <WorkSamples helmetTitle="وب سایت شخصی | نمونه کارها" />
             </Page>
-            <Page pageNumber={pageNumber} index={4}>
+            <Page pageNumber={pageNumber} index={4} style={Object.assign({}, styles.slide, styles.slide2)}>
               <Comments helmetTitle="وب سایت شخصی | نظرات" />
             </Page>
-            <Page pageNumber={pageNumber} index={5}>
+            <Page pageNumber={pageNumber} index={5}  style={Object.assign({}, styles.slide, styles.slide3)}>
               <Contact helmetTitlte="وب سایت شخصی | ارتباط با من" />
             </Page>
           </SwipeableViewer>
